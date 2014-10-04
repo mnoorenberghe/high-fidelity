@@ -90,6 +90,9 @@ HighFidelity.PlayerController = Ember.ObjectController.extend({
         this.set('timeElapsed', HighFidelity.formatTime(audio.currentTime));
         this.set('timeRemaining',
                  HighFidelity.formatTime(audio.duration - audio.currentTime));
+        // In some cases audio.duration is NaN initially and follow currentTime
+        // when playing a Blob.
+        this.set('timeTotal', HighFidelity.formatTime(audio.duration));
 
         this.set('progressBar.max', audio.duration);
         this.set('progressBar.value', audio.currentTime);
