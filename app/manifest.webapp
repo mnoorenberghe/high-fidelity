@@ -23,6 +23,10 @@
         "audio-channel-content": {
             "description": "Required to play audio in the background."
         },
+        "device-storage:music": {
+            "access": "readwrite",
+            "description": "Required to store podcast audio files"
+        },
         "storage": {
             "description": "Required to store podcast audio files and images."
         },
